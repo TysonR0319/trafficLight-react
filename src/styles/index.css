@@ -1,12 +1,60 @@
+.container-fluid{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 500px;
+    height: 500px;
+    align-items: center;
 
-/* 
 
-    You can write your own styles here...
+}
+.pole{
+    width: 25px;
+    height: 100px;
+    background-color: black;
     
     
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
+}
+.wrap-circle{
+    width: 200px;
+    height: 600px;
+    background-color: black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.red{
+    background-color: red;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
 
-*/
+   
+}
+
+.yellow{
+    background-color: yellow;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+}
+.green{
+    background-color: green;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+}
+.purple{
+    background-color: rgb(183, 2, 255);
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+}
+.selected{
+box-shadow:
+0 0 5px 10px rgb(250, 255, 161),  /* inner white */
+0 0 10px 20px  rgb(255, 232, 119); /* outer cyan */
+}

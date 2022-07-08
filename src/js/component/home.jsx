@@ -1,26 +1,36 @@
-import React from "react";
-
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
+import React, { useState, useEffect } from 'react';
 
 //create your first component
-const Home = () => {
+const TrafficLight = () => {
+
+	const[color, setColor] = useState("null")
+	const[visible, toggleVisibility] = useState(false)
+
+	const cycle = () => {
+	if(color == "red"){
+		setColor("green")
+	}else if (color == "green"){
+		setColor("yellow")
+	} else {
+		setColor("red")
+	};
+}
+
+
+
 	return (
-		<div className="text-center">
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
+		<div className="container-fluid">
+			<div className="pole"></div>
+			<div className="wrap-circle">
+				<div onClick={() => setColor("red")} className={(color == "red") ? "red selected": "red"}></div>
+				<div onClick={() => setColor("yellow")} className={(color == "yellow") ? "yellow selected": "yellow"}></div>
+				<div onClick={() => setColor("green")}className={(color == "green") ? "green selected": "green"}></div>
+				<div onClick={() => setColor("purple")}className={(visible == true) ? "purple selected": "d-none"}></div>
+				<button onClick={cycle} className="cycle-button"></button>
+				<button onClick={() => toggleVisibility((visible)=> !visible)} className="toggle-button"></button>
+			</div>
 		</div>
 	);
 };
 
-export default Home;
+export default TrafficLight;
